@@ -1,9 +1,11 @@
-import { Text, View } from "react-native"
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { SideMenuNavigator } from './presentation/routes/SideMenuNavigator';
 
 export const App = () => {
   return (
-    <View>
-      <Text>App.tsx</Text>
-    </View>
+    <NavigationContainer>
+      <SideMenuNavigator/>
+    </NavigationContainer>
   )
 }
