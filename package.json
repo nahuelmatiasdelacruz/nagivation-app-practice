@@ -7,8 +7,7 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest",
-    "ios:simulator": "npm run ios -- --simulator='iPhone 15 Pro Max (765E9BD2-B872-40A8-883F-10F857DB9FB1)'"
+    "test": "jest"
   },
   "dependencies": {
     "@react-native-masked-view/masked-view": "^0.3.0",
