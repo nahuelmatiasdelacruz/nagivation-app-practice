@@ -4,22 +4,14 @@ import { DrawerActions, NavigationProp, useNavigation } from "@react-navigation/
 import { PrimaryButton } from "../../components/shared/PrimaryButton";
 import { RootStackParams } from "../../../domain/types/RootStackParams";
 import { useEffect } from "react";
+import { HambugerMenu } from "../../components/shared/HambugerMenu";
 
 export const HomeScreen = () => {
   const navigation = useNavigation<NavigationProp<RootStackParams>>();
 
-  useEffect(()=>{
-    navigation.setOptions({
-      headerLeft: () => (
-        <Pressable onPress={()=>navigation.dispatch(DrawerActions.toggleDrawer)}>
-          <Text>Menu</Text>
-        </Pressable>
-      )
-    })
-  },[]);
-
   return (
     <View style={globalStyles.container}>
+      <HambugerMenu/>
       <PrimaryButton onPress={()=>navigation.navigate('Products')} label='Productos'/>
       <PrimaryButton onPress={()=>navigation.navigate('Settings')} label='Settings'/>
     </View>

@@ -4,6 +4,7 @@ import { globalColors } from '../theme/theme';
 import { useWindowDimensions } from 'react-native';
 import { CustomDrawerContent } from '../components/CustomDrawerContent';
 import { BottomTabsNavigator } from './BottomTabsNavigator';
+import { IonIcon } from '../components/shared/IonIcon';
 
 const Drawer = createDrawerNavigator();
 
@@ -15,7 +16,7 @@ export const SideMenuNavigator = () => {
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawerContent {...props}/>}
       screenOptions={{
-        headerShown: true,
+        headerShown: false,
         drawerType: (dimensions.width >= 758) ? 'permanent' : 'front',
         drawerActiveBackgroundColor: globalColors.primary,
         drawerActiveTintColor: 'white',
@@ -25,8 +26,8 @@ export const SideMenuNavigator = () => {
           paddingHorizontal: 20,
         },
       }}>
-      <Drawer.Screen name="Tabs" component={BottomTabsNavigator} />
-      <Drawer.Screen name="Profile" component={ProfileScreen} />
+      <Drawer.Screen options={{ drawerIcon: ({color})=>(<IonIcon name='bonfire-outline' color={color}/>)}} name="Tabs" component={BottomTabsNavigator} />
+      <Drawer.Screen options={{ drawerIcon: ({color})=>(<IonIcon name='person-circle-outline' color={color}/>)}} name="Profile" component={ProfileScreen} />
     </Drawer.Navigator>
   );
 };
